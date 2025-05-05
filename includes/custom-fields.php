@@ -35,7 +35,7 @@ class Slot_Pages_Custom_Fields {
             'menu_position' => 5,
             'supports' => [ 'title', 'thumbnail' ],
             'rewrite' => [ 'slug' => 'slots' ],
-            'show_in_rest' => false, // Disable Gutenberg REST support
+            'show_in_rest' => true, // Disable Gutenberg REST support
         ];
 
         register_post_type( 'slot', $args );

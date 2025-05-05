@@ -32,6 +32,7 @@ class Slot_Pages_Plugin {
     private function hooks() {
         register_activation_hook( __FILE__, [ $this, 'activate' ] );
         register_deactivation_hook( __FILE__, [ $this, 'deactivate' ] );
+
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
         add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_assets' ] ); 
     }
