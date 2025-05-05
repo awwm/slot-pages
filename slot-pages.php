@@ -25,6 +25,7 @@ class Slot_Pages_Plugin {
 
     private function includes() {
         require_once SLOT_PAGES_DIR . 'includes/custom-fields.php';
+        require_once SLOT_PAGES_DIR . 'includes/admin-columns.php';
     }
 
     private function hooks() {
