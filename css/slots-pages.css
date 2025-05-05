@@ -1,0 +1,7 @@
+.star-rating .star {
+    color: #777
+}
+
+.star-rating .star.filled {
+    color: #FFD700
+}

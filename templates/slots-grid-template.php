@@ -25,12 +25,12 @@ $query = new WP_Query( $args );
 if ( $query->have_posts() ) :
     echo '<div class="slot-pages-grid">';
     while ( $query->have_posts() ) : $query->the_post();
-        // Display each slot
-        $star_rating = get_post_meta( get_the_ID(), 'star_rating', true );
-        $provider    = get_post_meta( get_the_ID(), 'provider_name', true );
-        $rtp         = get_post_meta( get_the_ID(), 'rtp', true );
-        $min_wager   = get_post_meta( get_the_ID(), 'min_wager', true );
-        $max_wager   = get_post_meta( get_the_ID(), 'max_wager', true );
+        // Fetch custom fields
+        $star_rating = get_post_meta( get_the_ID(), '_slot_star_rating', true );
+        $provider    = get_post_meta( get_the_ID(), '_slot_provider', true );
+        $rtp         = get_post_meta( get_the_ID(), '_slot_rtp', true );
+        $min_wager   = get_post_meta( get_the_ID(), '_slot_min_wager', true );
+        $max_wager   = get_post_meta( get_the_ID(), '_slot_max_wager', true );
         $image        = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' );
 
         ?>
