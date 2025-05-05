@@ -48,9 +48,9 @@ class Slot_Pages_Plugin {
 
     public function enqueue_styles() {
         wp_enqueue_style( 
-            'slot-pages-styles', 
+            'slot-pages-styles', // Handle plugin styles
             SLOT_PAGES_URL . 'css/slots-pages.css', [], 
-            '1.0.0' 
+            '1.0.0' // Version
         );
     }
 
