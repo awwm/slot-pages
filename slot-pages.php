@@ -33,6 +33,7 @@ class Slot_Pages_Plugin {
         register_activation_hook( __FILE__, [ $this, 'activate' ] );
         register_deactivation_hook( __FILE__, [ $this, 'deactivate' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
+        add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_assets' ] ); 
     }
 
     public function activate() {
@@ -46,7 +47,29 @@ class Slot_Pages_Plugin {
     }
 
     public function enqueue_styles() {
-        wp_enqueue_style( 'slot-pages-styles', SLOT_PAGES_URL . 'css/slots-pages.css', [], '1.0.0' );
+        wp_enqueue_style( 
+            'slot-pages-styles', 
+            SLOT_PAGES_URL . 'css/slots-pages.css', [], 
+            '1.0.0' 
+        );
+    }
+
+    // Function to enqueue block scripts for the block editor
+    public function enqueue_block_assets() {
+        wp_enqueue_script(
+            'slot-pages-blocks',  // Handle for the block script
+            SLOT_PAGES_URL . 'build/index.js', // Path to the compiled JavaScript
+            [ 'wp-blocks', 'wp-element', 'wp-editor' ], // Dependencies
+            filemtime( SLOT_PAGES_DIR . 'build/index.js' ), // Versioning based on file modification time
+            true // Load in footer
+        );
+
+        wp_enqueue_style(
+            'slot-pages-blocks-editor-style',  // Handle for block editor styles
+            SLOT_PAGES_URL . 'css/blocks-editor-style.css', // Block editor CSS (optional)
+            [],
+            '1.0.0'  // Version
+        );
     }
 }
 

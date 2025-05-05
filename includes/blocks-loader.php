@@ -17,7 +17,7 @@ class Slot_Pages_Blocks_Loader {
         // Register Slots Grid Block
         wp_register_script(
             'slots-grid-block',
-            SLOT_PAGES_URL . 'blocks/slots-grid.js',
+            SLOT_PAGES_URL . 'src/slots-grid.js',
             [ 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components' ],
             '1.0.0',
             true
@@ -31,7 +31,7 @@ class Slot_Pages_Blocks_Loader {
         // Register Slot Detail Block
         wp_register_script(
             'slot-detail-block',
-            SLOT_PAGES_URL . 'blocks/slot-detail.js',
+            SLOT_PAGES_URL . 'src/slot-detail.js',
             [ 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components' ],
             '1.0.0',
             true
