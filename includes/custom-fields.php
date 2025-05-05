@@ -11,7 +11,7 @@ class Slot_Pages_Custom_Fields {
         add_action( 'init', [ $this, 'register_custom_post_type' ] );
         add_action( 'add_meta_boxes', [ $this, 'register_meta_boxes' ] );
         add_action( 'save_post', [ $this, 'save_meta_boxes' ] );
-        add_filter( 'use_block_editor_for_post_type', [ $this, 'disable_gutenberg_for_slots' ], 10, 2 );
+        //add_filter( 'use_block_editor_for_post_type', [ $this, 'disable_gutenberg_for_slots' ], 10, 2 );
     }
 
     public function register_custom_post_type() {
@@ -35,7 +35,7 @@ class Slot_Pages_Custom_Fields {
             'menu_position' => 5,
             'supports' => [ 'title', 'thumbnail' ],
             'rewrite' => [ 'slug' => 'slots' ],
-            'show_in_rest' => true, // Disable Gutenberg REST support
+            'show_in_rest' => true,
         ];
 
         register_post_type( 'slot', $args );
@@ -97,12 +97,12 @@ class Slot_Pages_Custom_Fields {
         update_post_meta( $post_id, '_slot_max_wager', floatval( $_POST['slot_max_wager'] ) );
     }
 
-    public function disable_gutenberg_for_slots( $use_block_editor, $post_type ) {
-        if ( $post_type === 'slot' ) {
-            return false;
-        }
-        return $use_block_editor;
-    }
+    // public function disable_gutenberg_for_slots( $use_block_editor, $post_type ) {
+    //     if ( $post_type === 'slot' ) {
+    //         return false;
+    //     }
+    //     return $use_block_editor;
+    // }
 }
 
 new Slot_Pages_Custom_Fields();

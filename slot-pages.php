@@ -27,6 +27,7 @@ class Slot_Pages_Plugin {
         require_once SLOT_PAGES_DIR . 'includes/custom-fields.php';
         require_once SLOT_PAGES_DIR . 'includes/admin-columns.php';
         require_once SLOT_PAGES_DIR . 'includes/blocks-loader.php';
+        require_once SLOT_PAGES_DIR . 'includes/rest-api.php';
     }
 
     private function hooks() {
