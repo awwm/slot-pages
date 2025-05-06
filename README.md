@@ -7,6 +7,20 @@ It provides two reusable blocks:
 
 ---
 
+## Technologies Used
+
+This plugin is built using **WordPress Block Editor (Gutenberg)** technologies.
+
+Key tools & components:
+- **React** → WordPress blocks are built on React under the hood.
+- **@wordpress/scripts** → A build toolkit (based on Webpack + Babel) provided by WordPress to compile block assets.
+- **package.json** → Manages Node.js dependencies like `@wordpress/scripts`, React, and related build tools.
+- **npm** → Used to install, build, and bundle block JavaScript and CSS.
+
+Without these tools, the block JavaScript would not compile into something the browser understands.
+
+---
+
 ## Included Files & Features
 
 - Custom Post Type → Registers slot post type.
