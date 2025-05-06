@@ -45,6 +45,13 @@ class Slot_Pages_Blocks_Loader {
 
     public function render_slots_grid( $attributes ) {
         ob_start();
+        $attributes = wp_parse_args($attributes, [
+            'limit'      => 6,
+            'sorting'    => 'recent',
+            'titleColor' => '#000000',
+            'starColor'  => '#FFD700',
+            'fontSize'   => 16,
+        ]);
         include SLOT_PAGES_DIR . 'templates/slots-grid-template.php';
         return ob_get_clean();
     }
