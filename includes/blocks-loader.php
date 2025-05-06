@@ -46,11 +46,18 @@ class Slot_Pages_Blocks_Loader {
     public function render_slots_grid( $attributes ) {
         ob_start();
         $attributes = wp_parse_args($attributes, [
-            'limit'      => 6,
-            'sorting'    => 'recent',
-            'titleColor' => '#000000',
-            'starColor'  => '#FFD700',
-            'fontSize'   => 16,
+            'limit'            => 6,
+            'sorting'          => 'recent',
+            'columns'          => 3,
+            'titleColor'       => '#000000',
+            'starColor'        => '#FFD700',
+            'providerColor'    => '#555555',
+            'wagerColor'       => '#555555',
+            'buttonBgColor'    => '#0073aa',
+            'buttonTextColor'  => '#ffffff',
+            'titleFontSize'    => 16,
+            'providerFontSize' => 14,
+            'wagerFontSize'    => 14,
         ]);
         include SLOT_PAGES_DIR . 'templates/slots-grid-template.php';
         return ob_get_clean();
